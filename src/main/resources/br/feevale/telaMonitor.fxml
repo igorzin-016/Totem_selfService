@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.feevale.TelaMonitorController">
+   
+   <VBox spacing="20" HBox.hgrow="ALWAYS" style="-fx-padding: 30;">
+       <Label text="PREPARANDO..." textFill="#cccccc">
+           <font><Font name="System Bold" size="36.0" /></font>
+       </Label>
+       <ListView fx:id="listaPreparo" style="-fx-background-color: transparent; -fx-control-inner-background: black; -fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;" VBox.vgrow="ALWAYS" />
+   </VBox>
+
+   <Separator orientation="VERTICAL" />
+
+   <VBox spacing="20" HBox.hgrow="ALWAYS" style="-fx-padding: 30; -fx-background-color: #222;">
+       <Label text="PRONTO!" textFill="#00ff00">
+           <font><Font name="System Bold" size="48.0" /></font>
+       </Label>
+       <ListView fx:id="listaPronto" style="-fx-background-color: transparent; -fx-control-inner-background: #222; -fx-font-size: 40px; -fx-font-weight: bold; -fx-text-fill: #00ff00;" VBox.vgrow="ALWAYS" />
+   </VBox>
+
+</HBox>

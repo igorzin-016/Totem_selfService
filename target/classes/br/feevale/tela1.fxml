@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<BorderPane style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.feevale.Tela1Controller">
+   
+   <top>
+      <VBox>
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="80.0" style="-fx-background-color: #E69B00; -fx-padding: 15;">
+               <children>
+                  <Label text="Mas Bah Tchê!" textFill="WHITE">
+                     <font>
+                        <Font name="Impact" size="36.0" />
+                     </font>
+                  </Label>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button onAction="#irParaCozinha" style="-fx-background-color: rgba(255,255,255,0.3); -fx-text-fill: white;" text="Área da Cozinha" />
+               </children>
+            </HBox>
+            
+            <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: #f4f4f4; -fx-padding: 10 20;">
+               <children>
+                  <Button onAction="#filtrarTodos" style="-fx-background-color: transparent; -fx-font-weight: bold; -fx-text-fill: #333;" text="Todos" />
+                  <Button onAction="#filtrarBebidas" style="-fx-background-color: transparent; -fx-text-fill: #666;" text="Bebidas" />
+                  <Button onAction="#filtrarBurgers" style="-fx-background-color: transparent; -fx-text-fill: #666;" text="Burger Bacon" />
+                  <Button onAction="#filtrarSobremesas" style="-fx-background-color: transparent; -fx-text-fill: #666;" text="Sobremesas" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   
+   <center>
+      <ScrollPane fitToWidth="true" style="-fx-background-color: transparent; -fx-padding: 20;">
+         <content>
+            <VBox fx:id="painelProdutos" spacing="15.0" style="-fx-background-color: white;">
+               </VBox>
+         </content>
+      </ScrollPane>
+   </center>
+   
+   <right>
+      <VBox prefWidth="280.0" spacing="10.0" style="-fx-background-color: #f9f9f9; -fx-border-color: #ddd; -fx-border-width: 0 0 0 1; -fx-padding: 15;">
+         <children>
+            <Label text="Seu Pedido" textFill="#E69B00">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            
+            <ListView fx:id="listaCarrinho" VBox.vgrow="ALWAYS" />
+            
+            <Label fx:id="lblTotal" alignment="CENTER_RIGHT" maxWidth="Infinity" text="Total: R$ 0,00">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            
+            <HBox spacing="10.0">
+               <children>
+                  <Button onAction="#remItem" style="-fx-background-color: #ffcccc; -fx-text-fill: red;" text="Remover" />
+                  <Button maxWidth="Infinity" onAction="#finalizarPedido" style="-fx-background-color: #E69B00; -fx-text-fill: white; -fx-font-weight: bold;" text="FINALIZAR" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </right>
+</BorderPane>

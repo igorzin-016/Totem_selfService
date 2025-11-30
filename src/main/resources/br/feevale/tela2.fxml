@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.feevale.Tela2Controller">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="20" style="-fx-background-color: #333; -fx-padding: 15;">
+            <Button onAction="#irParaTotem" style="-fx-background-color: white;" text="&lt; Voltar ao Totem" />
+            <Label text="GESTÃO DA COZINHA" textFill="WHITE">
+                <font><Font name="System Bold" size="20.0" /></font>
+            </Label>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button onAction="#abrirMonitorCliente" style="-fx-background-color: #E69B00; -fx-text-fill: white; -fx-font-weight: bold;" text="ABRIR VISOR DO CLIENTE (Nova Janela)" />
+        </HBox>
+    </top>
+    
+    <center>
+        <HBox spacing="15" style="-fx-padding: 15;">
+            <VBox spacing="10" HBox.hgrow="ALWAYS" style="-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0);">
+                <Label alignment="CENTER" maxWidth="Infinity" style="-fx-background-color: #ffcccc; -fx-padding: 10; -fx-text-fill: #cc0000; -fx-font-weight: bold;" text="A FAZER (Pendente)" />
+                <ListView fx:id="listaPendentes" VBox.vgrow="ALWAYS" style="-fx-border-color: transparent;" />
+                <Button maxWidth="Infinity" onAction="#moverParaPreparo" style="-fx-background-color: #ffcccc; -fx-text-fill: #cc0000; -fx-padding: 15;" text="INICIAR PREPARO &gt;" />
+            </VBox>
+
+            <VBox spacing="10" HBox.hgrow="ALWAYS" style="-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0);">
+                <Label alignment="CENTER" maxWidth="Infinity" style="-fx-background-color: #fff5cc; -fx-padding: 10; -fx-text-fill: #996600; -fx-font-weight: bold;" text="NA CHAPA (Preparando)" />
+                <ListView fx:id="listaPreparo" VBox.vgrow="ALWAYS" style="-fx-border-color: transparent;" />
+                <Button maxWidth="Infinity" onAction="#moverParaPronto" style="-fx-background-color: #fff5cc; -fx-text-fill: #996600; -fx-padding: 15;" text="AVISAR QUE TÁ PRONTO &gt;" />
+            </VBox>
+            
+            <VBox spacing="10" HBox.hgrow="ALWAYS" style="-fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0);">
+                <Label alignment="CENTER" maxWidth="Infinity" style="-fx-background-color: #ccffcc; -fx-padding: 10; -fx-text-fill: #006600; -fx-font-weight: bold;" text="PRONTO (Aguardando Retirada)" />
+                <ListView fx:id="listaPronto" VBox.vgrow="ALWAYS" style="-fx-border-color: transparent;" />
+                <Button maxWidth="Infinity" onAction="#entregarPedido" style="-fx-background-color: #ccffcc; -fx-text-fill: #006600; -fx-padding: 15;" text="BAIXA (ENTREGUE)" />
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>
