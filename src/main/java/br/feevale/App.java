@@ -15,7 +15,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         // DEFINIÇÃO DO TAMANHO: 1366 de largura por 768 de altura 
-        scene = new Scene(loadFXML("tela3"), 1366, 768);
+        scene = new Scene(loadFXML("tela3"), 1920, 1080);
         
         stage.setScene(scene);
         stage.setTitle("Totem Mas Bah Tchê - Autoatendimento");

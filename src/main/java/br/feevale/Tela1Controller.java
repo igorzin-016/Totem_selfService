@@ -147,7 +147,6 @@ public class Tela1Controller {
             pedidoAtual.getItens().remove(indiceSelecionado);
             atualizarCarrinho();
         } else {
-            // Mantida a lógica original de alerta
             Alert alerta = new Alert(Alert.AlertType.WARNING);
             alerta.setTitle("Atenção");
             alerta.setHeaderText("Nenhum item selecionado!");
@@ -162,7 +161,7 @@ public class Tela1Controller {
             return; // Não envia pedido vazio
         }
 
-        // CHAVE PARA SALVAR O PEDIDO NO SISTEMA/ARQUIVO
+        // SALVAR O PEDIDO NO ARQUIVO .bin
         DadosSistema.adicionarPedido(pedidoAtual);
 
         // Alerta de confirmação

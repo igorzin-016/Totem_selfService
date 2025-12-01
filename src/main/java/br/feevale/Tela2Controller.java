@@ -81,7 +81,7 @@ public class Tela2Controller {
         Pedido p = listaPendentes.getSelectionModel().getSelectedItem();
         if (p != null) {
             p.setStatus(StatusPedido.PREPARANDO);
-            DadosSistema.atualizarBanco(); // ATUALIZANDO
+            DadosSistema.atualizarBanco(); // ATUALIZA
             atualizarListas();
         }
     }
