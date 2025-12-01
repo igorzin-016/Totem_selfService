@@ -1,0 +1,57 @@
+# Totem de Autoatendimento - Mas Bah Tchê 🍔
+
+Sistema de autoatendimento desenvolvido em Java/JavaFX para a disciplina de Programação 1. O projeto simula o fluxo de pedidos de uma hamburgueria, incluindo totem para o cliente, gestão de cozinha (Kanban) e monitor de retirada.
+
+## 🚀 Funcionalidades
+
+- **Totem do Cliente:** Navegação por categorias, carrinho de compras e simulação de pagamento.
+- **Gestão da Cozinha:** Sistema Kanban para alterar status (Pendente -> Preparando -> Pronto).
+- **Monitor de Senhas:** Janela separada para exibição de pedidos prontos (TV do salão).
+- **Persistência de Dados:** Salvamento automático de pedidos em arquivo binário (recuperação pós-falha).
+
+## 🛠️ Pré-requisitos
+
+Para executar este projeto, você precisará de:
+
+- **Java JDK** (Recomendado versão 17 ou superior).
+- **JavaFX SDK** (Configurado no classpath ou via gerenciador de dependências).
+- Uma IDE Java (Eclipse, IntelliJ IDEA ou VS Code).
+
+## ▶️ Como Executar
+
+1. Clone este repositório.
+2. Abra o projeto na sua IDE de preferência.
+3. Localize a classe principal: `src/main/java/br/feevale/App.java`.
+4. Execute a classe `App.java`.
+
+> **Nota:** Certifique-se de que a pasta `src/main/resources/br/feevale/imagens` contém as imagens dos produtos para o carregamento correto do cardápio.
+
+## 🧪 Roteiro de Testes
+
+Siga os passos abaixo para validar todas as funcionalidades do sistema:
+
+### Teste 1: Fluxo do Cliente (Pedido)
+1. Na tela inicial (Hambúrguer grande), clique em qualquer lugar para iniciar.
+2. Na tela de Cardápio, navegue pelas abas "Bebidas", "Burger Bacon" e "Sobremesas".
+3. Adicione itens variados ao carrinho (ex: 1 X-Burguer, 1 Coca-Cola).
+4. Tente remover um item selecionando-o na lista à direita e clicando em "Remover".
+5. Clique em "Finalizar Pedido".
+6. Escolha uma forma de pagamento na janela simulada.
+7. Verifique se a mensagem de "Sucesso" aparece com o número do pedido.
+
+### Teste 2: Fluxo da Cozinha (Produção)
+1. Na tela do Cardápio, clique no botão superior direito "Área da Cozinha".
+2. Verifique se o pedido criado no Teste 1 está na coluna **"A FAZER (Pendente)"**.
+3. Selecione o pedido e clique em **"Iniciar Preparo"**. Ele deve mover para a coluna do meio.
+4. Clique no botão laranja **"ABRIR VISOR DO CLIENTE"** (topo direito). Uma nova janela preta abrirá.
+5. Na Cozinha, mova o pedido para **"AVISAR QUE TÁ PRONTO"**.
+6. Observe no Visor do Cliente: o número do pedido deve aparecer grande na cor verde.
+7. Na Cozinha, clique em **"BAIXA (ENTREGUE)"** para finalizar o processo.
+
+### Teste 3: Teste de Persistência (Queda de Energia)
+1. Faça um novo pedido no Totem.
+2. Vá até a cozinha e mova o pedido para "EM PREPARO".
+3. **Feche a aplicação** completamente (pare a execução na IDE).
+4. Execute o `App.java` novamente.
+5. Vá direto para a Cozinha.
+6. **Resultado Esperado:** O pedido deve estar lá, na coluna "EM PREPARO", exatamente onde você deixou.
